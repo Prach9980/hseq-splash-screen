@@ -34,14 +34,14 @@ export default function onboarding() {
   const SetIsFreshInstall = async () => {
     var val = await AsyncStorage.getItem("isFreshInstall");
     if (val === "false") {
-      router.push("(tabs)");
+      router.replace("(drawer)");
     }
   };
 
   const FinishOnBoarding = async () => {
     alert("Finish Onboarding");
     await AsyncStorage.setItem("isFreshInstall", "false");
-    router.push("(tabs)");
+    router.replace("(drawer)");
   };
 
   return (
