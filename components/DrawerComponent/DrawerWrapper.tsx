@@ -18,8 +18,9 @@ export default function DrawerWrapper({
         scale: interpolate(progress.value, [0, 1], [1, 0.8]),
       },
     ],
-    borderRadius: 20,
+    borderRadius: progress.value > 0 ? 20 : 0,
     overflow: "hidden",
+    duration: 500,
   }));
 
   return (

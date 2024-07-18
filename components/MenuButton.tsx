@@ -8,19 +8,13 @@ export default function MenuButton() {
   const colorScheme = useColorScheme();
   const navigation = useNavigation();
 
-  const CanGoBack = navigation.canGoBack();
-  const IconAction = () =>
-    CanGoBack
-      ? navigation.goBack()
-      : navigation.dispatch(DrawerActions.toggleDrawer());
-  console.log(CanGoBack);
   return (
     <Ionicons
-      style={{ position: "absolute", top: 80, left: 20 }}
-      name={CanGoBack ? "chevron-back" : "menu"}
-      size={40}
+      style={{ position: "absolute", top: 10, left: 20 }}
+      name="menu"
+      size={30}
       color={colorScheme === "dark" ? "white" : "black"}
-      onPress={IconAction}
+      onPress={() => navigation.dispatch(DrawerActions.toggleDrawer())}
     />
   );
 }
