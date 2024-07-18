@@ -14,7 +14,7 @@ import { OnboardingData } from "@/constants/OnboardingData";
 import OnBoardingItem from "@/components/OnBoardingComponents/OnBoardingItem";
 import OnBoardingPaginator from "@/components/OnBoardingComponents/OnBoardingPaginator";
 
-export default function onboarding() {
+export default function OnBoarding() {
   const [currenIndex, setCurrenIndex] = useState(0);
   const scorllX = useRef(new Animated.Value(0)).current;
   const { width } = useWindowDimensions();
@@ -34,14 +34,13 @@ export default function onboarding() {
   const SetIsFreshInstall = async () => {
     var val = await AsyncStorage.getItem("isFreshInstall");
     if (val === "false") {
-      router.replace("(drawer)");
+      router.replace("(stack)");
     }
   };
 
   const FinishOnBoarding = async () => {
-    alert("Finish Onboarding");
     await AsyncStorage.setItem("isFreshInstall", "false");
-    router.replace("(drawer)");
+    router.replace("(stack)");
   };
 
   return (

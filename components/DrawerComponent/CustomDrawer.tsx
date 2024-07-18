@@ -15,6 +15,12 @@ export default function CustomDrawer(props: DrawerContentComponentProps) {
           router.push("/");
         }}
       />
+      <DrawerItem
+        label="About"
+        onPress={() => {
+          router.push("/about");
+        }}
+      />
     </DrawerContentScrollView>
   );
 }

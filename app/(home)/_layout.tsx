@@ -1,34 +1,29 @@
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet } from "react-native";
 import React from "react";
-import {
-  DarkTheme,
-  DefaultTheme,
-  ThemeProvider,
-} from "@react-navigation/native";
-import { Stack } from "expo-router";
-import { useColorScheme } from "@/hooks/useColorScheme";
-import { Colors } from "@/constants/Colors";
+import { GestureHandlerRootView } from "react-native-gesture-handler";
+import { Drawer } from "expo-router/drawer";
+import CustomDrawer from "@/components/DrawerComponent/CustomDrawer";
 
 export default function HomeLayout() {
-  const colorScheme = useColorScheme();
   return (
-    <ThemeProvider value={colorScheme === "dark" ? DarkTheme : DefaultTheme}>
-      <Stack
-        initialRouteName="onboarding"
+    <GestureHandlerRootView style={{ flex: 1 }}>
+      <Drawer
         screenOptions={{
-          headerStyle: {
-            backgroundColor:
-              colorScheme === "dark"
-                ? Colors.dark.background
-                : Colors.light.background,
+          headerShown: false,
+          drawerType: "slide",
+          overlayColor: "transparent",
+          swipeEdgeWidth: 180,
+          drawerStyle: {
+            backgroundColor: "#0A8ED9",
+            width: "60%",
+          },
+          sceneContainerStyle: {
+            backgroundColor: "#0A8ED9",
           },
         }}
-      >
-        <Stack.Screen name="onboarding" options={{ headerShown: false }} />
-        <Stack.Screen name="(drawer)" options={{ headerShown: false }} />
-        <Stack.Screen name="+not-found" />
-      </Stack>
-    </ThemeProvider>
+        drawerContent={(props) => <CustomDrawer {...props} />}
+      />
+    </GestureHandlerRootView>
   );
 }
 
