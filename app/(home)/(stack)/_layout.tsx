@@ -14,23 +14,25 @@ export default function DrawerLayout() {
   const drawerOpen = useDrawerStatus();
   return (
     <DrawerWrapper>
-      <ThemeProvider value={colorScheme === "dark" ? DarkTheme : DefaultTheme}>
-        <Stack
-          screenOptions={{
-            statusBarStyle: colorScheme === "dark" ? "light" : "dark",
-            statusBarColor:
-              drawerOpen === "open"
-                ? "#0A8ED9"
-                : colorScheme === "dark"
-                ? Colors.dark.background
-                : Colors.light.background,
-          }}
-        >
-          <Stack.Screen name="index" options={{ headerShown: false }} />
-          <Stack.Screen name="about" />
-          <Stack.Screen name="+not-found" />
-        </Stack>
-      </ThemeProvider>
+      {/* <ThemeProvider
+        value={colorScheme === "dark" ? DefaultTheme : DefaultTheme}
+      >
+        drawerOpen === "open"
+              ? "#0A8ED9"
+              : colorScheme === "dark"
+              ? Colors.dark.background
+              : Colors.light.background,
+      </ThemeProvider> */}
+      <Stack
+        screenOptions={{
+          statusBarStyle: "dark",
+          statusBarColor: drawerOpen === "open" ? "#0A8ED9" : "#ffff",
+        }}
+      >
+        <Stack.Screen name="index" options={{ headerShown: false }} />
+        <Stack.Screen name="about" />
+        <Stack.Screen name="+not-found" />
+      </Stack>
     </DrawerWrapper>
   );
 }

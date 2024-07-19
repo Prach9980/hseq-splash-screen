@@ -1,5 +1,5 @@
 import type { PropsWithChildren } from "react";
-import { StyleSheet } from "react-native";
+import { StyleSheet, View } from "react-native";
 import Animated, { useAnimatedRef } from "react-native-reanimated";
 
 import { ThemedView } from "@/components/ThemedView";
@@ -10,16 +10,16 @@ type Props = PropsWithChildren<{}>;
 export default function ParallaxScrollView({ children }: Props) {
   const scrollRef = useAnimatedRef<Animated.ScrollView>();
   return (
-    <ThemedView style={styles.container}>
+    <View style={styles.container}>
       <MenuButton />
       <Animated.ScrollView
         ref={scrollRef}
         scrollEventThrottle={16}
         contentContainerStyle={styles.container}
       >
-        <ThemedView style={styles.container}>{children}</ThemedView>
+        <View style={styles.container}>{children}</View>
       </Animated.ScrollView>
-    </ThemedView>
+    </View>
   );
 }
 

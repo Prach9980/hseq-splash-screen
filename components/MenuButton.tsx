@@ -13,7 +13,7 @@ export default function MenuButton() {
       style={{ position: "absolute", top: 10, left: 20 }}
       name="menu"
       size={30}
-      color={colorScheme === "dark" ? "white" : "black"}
+      color="black"
       onPress={() => navigation.dispatch(DrawerActions.toggleDrawer())}
     />
   );

@@ -5,6 +5,7 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 import MenuButton from "@/components/MenuButton";
 import OnBoarding from "../onboarding";
 import ParallaxScrollView from "@/components/ParallaxScrollView";
+import { Text } from "react-native";
 
 export default function HomeScreen() {
   const [isFreshInstall, setIsFreshInstall] = useState(false);
@@ -21,7 +22,7 @@ export default function HomeScreen() {
 
   return (
     <ParallaxScrollView>
-      <ThemedText>Home</ThemedText>
+      <Text>Home</Text>
     </ParallaxScrollView>
   );
 }
