@@ -15,7 +15,7 @@ export default function DrawerWrapper({
   const animatedStyle = useAnimatedStyle(() => ({
     transform: [
       {
-        scale: interpolate(progress.value, [0, 1], [1, 0.8]),
+        scale: interpolate(progress.value, [0, 1], [1, 0.9]),
       },
     ],
     borderRadius: progress.value > 0 ? 20 : 0,

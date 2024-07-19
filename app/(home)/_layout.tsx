@@ -17,6 +17,7 @@ export default function HomeLayout() {
             backgroundColor: "#0A8ED9",
             width: "60%",
           },
+          drawerPosition: "left",
           sceneContainerStyle: {
             backgroundColor: "#0A8ED9",
           },

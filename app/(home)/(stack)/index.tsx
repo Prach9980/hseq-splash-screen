@@ -4,6 +4,7 @@ import { useState } from "react";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import MenuButton from "@/components/MenuButton";
 import OnBoarding from "../onboarding";
+import ParallaxScrollView from "@/components/ParallaxScrollView";
 
 export default function HomeScreen() {
   const [isFreshInstall, setIsFreshInstall] = useState(false);
@@ -19,15 +20,8 @@ export default function HomeScreen() {
   }
 
   return (
-    <ThemedView
-      style={{
-        flex: 1,
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
-      <MenuButton />
+    <ParallaxScrollView>
       <ThemedText>Home</ThemedText>
-    </ThemedView>
+    </ParallaxScrollView>
   );
 }
